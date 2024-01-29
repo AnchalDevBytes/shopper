@@ -1,9 +1,12 @@
-import { HeroSection } from "@/components";
+import { HeroSection, Highlight } from "@/components";
 
 const HomePage = () => {
   return (
    <div className="min-h-screen">
-   <HeroSection/>
+    <HeroSection/>
+    <hr className="w-[90vw] mx-auto" />
+    <Highlight />
+
    </div>
   );
 };
