@@ -55,10 +55,10 @@ const HeroSection = () => {
       }}
       className={`w-screen h-screen`}
     >
-      <div className="h-screen bg-gradient-to-br from-fuchsia-950/95 to-purple-800/40 flex flex-col items-center justify-center gap-5 backdrop-filter backdrop-blur-md">
-        <h1 className="text-[50px] mb-20 tracking-[50px] font-montserrat border-b-8 leading-none text-center font-thin pb-10 px-5 mt-10 border-dotted border-fuchsia-700 backdrop-filter rounded-b-[100px] z-0 welcome-animation">welcome</h1>
-        <p className="text-[250px] -my-32 font-extrabold z-10 tracking-widest text-fuchsia-300 to-animation">to</p>
-        <h2 className="text-[300px] px-10 w-[80%] flex items-center justify-center font-bold font-poorstory leading-none pt-5 border-t-4 border-fuchsia-700 bg-gradient-to-b from-fuchsia-700/80 text-pink-600 to-transparent rounded-t-[100px] backdrop-filter backdrop-blur-sm z-20 shopper-animation font-montserrat transition-all">{displayText}<span className="font-thin text-white text-7xl animate-pulse">|</span></h2>
+      <div className="h-screen bg-gradient-to-br from-fuchsia-950/95 to-purple-800/20 flex flex-col items-center justify-center gap-20 lg:gap-5 backdrop-filter backdrop-blur-xl relative">
+        <h1 className="lg:text-[50px] md:text-2xl text-sm md:mb-20 tracking-[10px] md:tracking-[35px] lg:tracking-[50px] font-montserrat border-b-8 leading-none text-center font-thin pb-4 md:pb-10 md:-mt-72 px-5 lg:mt-10 border-dotted border-fuchsia-700 rounded-b-[100px] z-0 welcome-animation">welcome</h1>
+        <p className="lg:text-[250px] md:text-[120px] text-7xl text lg:-my-32 md:-my-28 font-extrabold z-10 tracking-widest text-fuchsia-300 to-animation">to</p>
+        <h2 className="lg:text-[300px] md:text-[160px] text-[80px] px-10 w-[98%]  lg:w-[80%] flex items-center justify-center tracking-tighter md:mt-20 lg:tracking-normal md:font-bold font-poorstory leading-none pt-5 border-t-4 border-fuchsia-700 bg-gradient-to-b from-fuchsia-700/80 text-pink-600 to-transparent rounded-t-[50px] md:rounded-t-[100px] backdrop-filter backdrop-blur-md z-20 shopper-animation font-montserrat transition-all">{displayText}<span className="font-thin text-white lg:text-7xl text-5xl animate-pulse">|</span></h2>
         <ScrollDownBtn/>
       </div>
     </section>

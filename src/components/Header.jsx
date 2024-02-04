@@ -33,19 +33,19 @@ const Header = () => {
       <ul className="flex justify-between items-center">
         <Link
           href={"/"}
-          className="text-xl font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
+          className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
         >
           Shoppy
         </Link>
         <Link
           href={"/products"}
-          className="text-xl font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
+          className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
         >
           Products
         </Link>
         <Link
           href={"/cart"}
-          className="text-xl font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
+          className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
         >
           Cart
         </Link>
