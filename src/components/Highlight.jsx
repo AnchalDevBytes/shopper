@@ -3,6 +3,7 @@ import { getAllProducts } from "@/lib/features/ProductSlice";
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HighlightCard, ScrollDownBtn } from ".";
+import { fetchAllProducts } from "@/lib/features/filterSlice";
 
 const Highlight = () => {
   const [loading, setLoading] = useState(true);
@@ -11,7 +12,7 @@ const Highlight = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      await dispatch(getAllProducts());
+      await dispatch(fetchAllProducts());
     } catch (error) {
       console.error("Error:" + error);
     }
@@ -22,9 +23,9 @@ const Highlight = () => {
     fetchData();
   }, []);
 
-  const allProducts = useSelector((state) => state.product.allProducts);
+  const allProducts = useSelector((state) => state.filter.products);
 
-  const highlightProduct = allProducts?.products?.filter(
+  const highlightProduct = allProducts?.filter(
     (product) => product.rating > 4.5
   );
 

@@ -1,5 +1,5 @@
 'use client'
-import { HeroSection, Highlight, FeaturedProducts } from "@/components";
+import { HeroSection, Highlight, FeaturedProducts, ProductCategoriesShowcase } from "@/components";
 import { getHomeCategoryProducts } from "@/lib/features/homeCategorySlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,6 +63,8 @@ const HomePage = () => {
       categoryData={homeCategoryData.jwelleries}
       loading={homeCategoryData.loading}
      />
+     <hr className="w-[90vw] mx-auto" />
+     <ProductCategoriesShowcase/>
    </div>
   );
 };

@@ -1,38 +1,40 @@
-"use client"
+"use client";
 import { HighlightCard } from "@/components";
-import { getAllProducts } from "@/lib/features/ProductSlice";
+import { fetchAllProducts } from "@/lib/features/filterSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductsPage = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const filterProducts = useSelector((state) => state.filter.filteredProducts);
+  const isLoading = useSelector((state) => state.filter.loading);
 
-    const fetchData = async () => {
-        try {
-            await dispatch(getAllProducts())
-        } catch (error) {
-            console.error("Error occured in product listing " +error );
-        }
-    }
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, [dispatch]);
 
-    useEffect(() => {
-        fetchData();
-    },[])
-
-    const allProducts = useSelector(state => state.product.allProducts)
-    // console.log(allProducts);
-
-
-    return (
-        <div className="w-[60vw] bg-slate-700 h-[80vh] flex items-center py-8 flex-col">
-            <h1 className="text-4xl font-bold mb-5">Products Here</h1>
-            <div className="flex flex-wrap items-center justify-center gap-16 px-10 py-10 overflow-y-scroll">
-                {allProducts.products?.map((product) => (
-                    <HighlightCard key={product?.id} product={product} />
-                ))}
+  return (
+    <div className="w-[60vw] border-s-2 border-e-2 h-[80vh] border-blue-950 flex items-center flex-col">
+      <h1 className="text-4xl font-bold mb-2">Products Here</h1>
+      {
+        isLoading ? (
+            <div>...loading cards skeleton</div>
+        ) : (
+            <div className="flex flex-wrap items-center justify-center gap-16 px-10 py-5 overflow-y-scroll">
+                {
+                    filterProducts.length === 0 ? (
+                        <div>No products available</div>
+                    ) : (
+                        filterProducts?.map((product) => (
+                            <HighlightCard key={product?.id} product={product} />
+                        ))
+                    )
+                }
             </div>
-        </div>
-    );
-}
+        )
+      }
+    </div>
+  );
+};
 
 export default ProductsPage;
