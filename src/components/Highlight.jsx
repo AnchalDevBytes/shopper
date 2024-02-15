@@ -1,5 +1,4 @@
 "use client";
-import { getAllProducts } from "@/lib/features/ProductSlice";
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HighlightCard, ScrollDownBtn } from ".";

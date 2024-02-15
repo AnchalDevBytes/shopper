@@ -1,7 +1,9 @@
+import { useRouter } from "next/navigation";
 
 const HighlightCard = ({ product }) => {
+  const router = useRouter();
   return (
-    <div className="w-72 h-[300px] py-2 rounded-md shadow shadow-black cursor-pointer hover:scale-105 transition-all flex flex-col gap-2 bg-fuchsia-950 hover:bg-gradient-to-br hover:from-fuchsia-950 hover:to-purple-950/70 hover:backdrop-filter hover:backdrop-blur-lg p-2">
+    <div onClick={()=>router.push(`/product-detail/${product.id}`)} className="w-72 h-[300px] py-2 rounded-md shadow shadow-black cursor-pointer hover:scale-105 transition-all flex flex-col gap-2 bg-fuchsia-950 hover:bg-gradient-to-br hover:from-fuchsia-950 hover:to-purple-950/70 hover:backdrop-filter hover:backdrop-blur-lg p-2">
       <img
         src={product.thumbnail}
         alt=""

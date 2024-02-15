@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
@@ -24,6 +26,11 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [previousScrollPosition]);
 
+  const cartProduct = useSelector((state) => state.cart.productCart);
+  // console.log(cartProduct);
+
+  const totalQuantity = cartProduct.reduce((total, product) => total + product.quantity, 0)
+
   return (
     <header
       className={`bg-transparent py-3 px-[10vw] fixed w-full z-50 ${
@@ -45,9 +52,10 @@ const Header = () => {
         </Link>
         <Link
           href={"/cart"}
-          className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
+          className="relative"
         >
-          Cart
+          <FaShoppingCart className="lg:text-xl md:text-lg text-sm font-extralight cursor-pointer" />
+          <span className="bg-red-500 h-4 w-4  absolute rounded-full -top-2 -left-4 text-slate-100 text-xs text-center">{totalQuantity}</span>
         </Link>
       </ul>
     </header>

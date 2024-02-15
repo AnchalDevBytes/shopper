@@ -8,5 +8,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
 import ProductCategoriesShowcase from "./ProductCategoriesShowcase";
+import Button from "./Button";
+import CartCard from "./CartCard";
 
-export {Header, Footer, HeroSection, ScrollDownBtn, Highlight, HighlightCard, FeaturedProducts, LeftMenu, RightMenu, ProductCategoriesShowcase}
+export {Header, Footer, HeroSection, CartCard, ScrollDownBtn, Highlight, Button, HighlightCard, FeaturedProducts, LeftMenu, RightMenu, ProductCategoriesShowcase}
