@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaStar, FaStarHalf } from "react-icons/fa";
+import Link from "next/link";
 
 const DetailPage = () => {
   const dispatch = useDispatch();
@@ -35,16 +36,16 @@ const DetailPage = () => {
   };
 
   return (
-    <div className="bg-purple-950/50 h-screen w-screen flex items-center justify-center gap-20">
-      <div className="flex gap-7">
-        <div className="h-[320px] w-[450px] rounded-xl">
+    <div className="bg-purple-950/50 min-h-screen py-20 md:py-0 w-screen flex flex-col lg:flex-row items-center justify-center gap-10 md:gap-20">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-7">
+        <div className=" h-[220px] w-[320px] md:h-[320px] lg:h-[320px] md:w-[500px] lg:w-[450px] rounded-xl">
           <img
             className="h-full w-full rounded-xl"
             src={selectedImage}
             alt={product?.title}
           />
         </div>
-        <div className="flex flex-col justify-evenly">
+        <div className="flex md:flex-col justify-evenly">
           {product?.images?.map((image, index) => (
             <img
               key={index}
@@ -56,10 +57,10 @@ const DetailPage = () => {
           ))}{" "}
         </div>
       </div>
-      <div className=" bg-fuchsia-950 bg-gradient-to-br from-fuchsia-950 to-purple-950/70 hover:bg-gradient-to-tr hover:from-fuchsia-950 hover:to-purple-950/70 w-[40vw] rounded-2xl py-7 px-10 flex flex-col gap-5">
+      <div className=" bg-fuchsia-950 bg-gradient-to-br from-fuchsia-950 to-purple-950/70 hover:bg-gradient-to-tr hover:from-fuchsia-950 hover:to-purple-950/70 lg:w-[40vw] w-[80vw] rounded-2xl py-7 px-10 flex flex-col gap-5">
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
-            <h2 className="font-bold text-xl md:text-4xl">{product?.title}</h2>
+            <Link href={"/products"} className="font-bold text-xl md:text-4xl hover:text-pink-400/70 transition-all active:text-pink-400/70">{product?.title}</Link>
             <p className="text-gray-300 text-sm md:text-base font-extralight tracking-wider">
               {product?.description}
             </p>

@@ -9,7 +9,7 @@ const HighlightCard = ({ product }) => {
         alt=""
         className="w-full h-32 object-cover rounded-md"
       />
-      <div className="flex flex-col px-1 gap-3">
+      <div className="flex flex-col px-1 gap-2">
         <h2 className="text-base font-semibold text-gray-200">
           {product.title}
         </h2>

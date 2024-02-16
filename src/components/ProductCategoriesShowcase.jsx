@@ -27,7 +27,7 @@ const ProductCategoriesShowcase = () => {
           CATEGORIES
         </h1>
       </div>
-      <div className="flex flex-wrap max-w-[50%] gap-x-20 gap-y-10 justify-center mt-10">
+      <div className="flex flex-col md:flex-row flex-wrap items-center md:items-start gap-3 md:max-w-[50%] md:gap-x-20 md:gap-y-10 justify-center md:mt-10">
         {allCategories?.slice(12,18)?.map((category) => (
             <div key={category} className="flex flex-row">
                <Link href={`/products/categories/${category}`} className="text-xl font-bold font-montserrat text-pink-600/80 border-r-2 border-l-2 rounded-lg px-4 hover:scale-75 transition-all cursor-pointer">
