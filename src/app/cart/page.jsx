@@ -3,13 +3,14 @@ import { Button, CartCard, ScrollToTopBtn } from "@/components";
 import { clearCart } from "@/lib/features/cartSlice";
 import { MdCleaningServices } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
+import { checkout } from "@/utils/checkout";
 
 const CartPage = () => {
   const dispatch = useDispatch()
   const cartProduct = useSelector((state) => state.cart.productCart);
 
-  const totalPrice = cartProduct.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0)
-  const totalProduct = cartProduct.reduce((total, cartItem) => total + cartItem.quantity, 0)
+  const totalPrice = cartProduct.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
+  const totalProduct = cartProduct.reduce((total, cartItem) => total + cartItem.quantity, 0);
 
   return (
     <div className="flex flex-col py-20 min-h-screen w-screen bg-purple-950/50 gap-10">
@@ -46,7 +47,11 @@ const CartPage = () => {
       <div className="bg-fuchsia-950 p-10 lg:max-w-[20vw] flex flex-col gap-3 rounded-xl">
           <p className="md:text-lg text-base flex items-center gap-2 tracking-wider text-slate-300 font-semibold">Total Product : <span className="md:text-xl text-lg font-bold text-white">{totalProduct}</span> </p>
           <p className="md:text-lg text-base flex items-center gap-2 tracking-wider text-slate-300 font-semibold">Total cost to pay : <span className="md:text-xl text-lg font-bold text-white">$ {totalPrice}</span></p>
-          <Button text={"CHECKOUT"}/>
+          <Button clicFun={(()=>{
+            checkout({
+              lineItems : [{price : "price_1OlWMNSFGPYEJ6fLciHzFAhW", quantity : 1}]
+            })
+          })} text={"CHECKOUT"}/> 
       </div>
       </div>
     </div>
