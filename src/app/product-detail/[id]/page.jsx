@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components";
+import { Button, WishlistBtn } from "@/components";
 import { addToCart } from "@/lib/features/cartSlice";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -11,15 +11,16 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const allProducts = useSelector((state) => state.filter.products);
-
-  const product = allProducts.find((item) => item.id === parseInt(id));
-
+  const product = allProducts?.find((item) => item.id === parseInt(id));
   const [selectedImage, setSelectedImage] = useState(product?.thumbnail);
+  
 
+  // for dynamic images
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
 
+  //star rating
   const convertToStars = (rating) => {
     const fullStars = Math.floor(rating);
     const stars = [];
@@ -87,8 +88,9 @@ const DetailPage = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div className="flex items-center gap-10">
           <Button text={"AddTOCart"} clicFun={() => dispatch(addToCart(product))}/>
+          <WishlistBtn product={product}/>
         </div>
       </div>
     </div>

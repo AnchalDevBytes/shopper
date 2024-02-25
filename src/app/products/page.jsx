@@ -24,7 +24,7 @@ const ProductsPage = () => {
           id="filterScroll"
           className="flex flex-wrap items-center justify-center gap-10 lg:gap-16 px-10 py-5 overflow-y-scroll"
         >
-          {filterProducts.length === 0 ? (
+          {filterProducts?.length === 0 ? (
             <div>No products available</div>
           ) : (
             filterProducts?.map((product) => (

@@ -32,7 +32,7 @@ const ProductCategoriesShowcase = () => {
             <div key={category} className="flex flex-row">
                <Link href={`/products/categories/${category}`} className="text-xl font-bold font-montserrat text-pink-600/80 border-r-2 border-l-2 rounded-lg px-4 hover:scale-75 transition-all cursor-pointer">
                 {category.toUpperCase()}
-            </Link>
+              </Link>
             </div>
         ))}
       </div>

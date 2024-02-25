@@ -13,7 +13,7 @@ const Highlight = () => {
     try {
       await dispatch(fetchAllProducts());
     } catch (error) {
-      console.error("Error:" + error);
+      console.error("Error:" + error.message);
     }
     setLoading(false);
   };
@@ -24,11 +24,9 @@ const Highlight = () => {
 
   const allProducts = useSelector((state) => state.filter.products);
 
-  const highlightProduct = allProducts?.filter(
+  const topFiveProduct = useMemo(() => allProducts?.filter(
     (product) => product.rating > 4.5
-  );
-
-  const topFiveProduct = useMemo(() => highlightProduct?.slice(1, 6));
+  )?.slice(1,6));
 
   return (
     <section className="bg-purple-950/50 min-h-screen pt-14 flex flex-col items-center gap-10 relative">

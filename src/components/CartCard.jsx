@@ -20,7 +20,7 @@ const CartCard = ({ cartItem }) => {
             {cartItem?.title}
           </Link>
           <p className="hidden md:flex text-gray-400 text-[8px] md:text-sm lg:text-base ">
-            {cartItem?.description.slice(0, 30)}...
+            {cartItem?.description?.slice(0, 30)}...
           </p>
           <p className="text-green-700 font-bold text-xs md:text-lg lg:text-xl">
             ${cartItem?.price?.toFixed(2)}

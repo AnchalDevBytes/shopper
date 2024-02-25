@@ -21,7 +21,7 @@ const CartPage = () => {
             {cartProduct?.length > 0 ? (
               <>
               <div className="flex flex-col gap-10">
-                {cartProduct.map((cartItem) => (
+                {cartProduct?.map((cartItem) => (
                   <CartCard key={cartItem.id} cartItem={cartItem} />
                 ))}
               </div>
