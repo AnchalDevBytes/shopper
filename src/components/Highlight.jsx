@@ -26,13 +26,13 @@ const Highlight = () => {
 
   const topFiveProduct = useMemo(() => allProducts?.filter(
     (product) => product.rating > 4.5
-  )?.slice(1,6));
+  )?.slice(1,6),[allProducts]);
 
   return (
     <section className="bg-purple-950/50 min-h-screen pt-14 flex flex-col items-center gap-10 relative">
       <div className="flex flex-col gap-1 md:gap-2 items-center">
         <p className="md:text-2xl text-lg font-medium font-montserrat tracking-widest text-pink-600/40">
-          Today's
+          Today&apos;s
         </p>
         <h1 className="md:text-5xl text-3xl font-bold tracking-widest font-montserrat ">
           HIGHLIGHT

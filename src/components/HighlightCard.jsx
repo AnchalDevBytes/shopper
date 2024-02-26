@@ -1,12 +1,15 @@
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const HighlightCard = ({ product }) => {
   const router = useRouter();
   return (
     <div onClick={()=>router.push(`/product-detail/${product?.id}`)} className="w-72 h-[300px] py-2 rounded-md shadow shadow-black cursor-pointer hover:scale-105 transition-all flex flex-col gap-2 bg-fuchsia-950 hover:bg-gradient-to-br hover:from-fuchsia-950 hover:to-purple-950/70 hover:backdrop-filter hover:backdrop-blur-lg p-2">
-      <img
+      <Image
+        height={720}
+        width={1280}
         src={product?.thumbnail}
-        alt=""
+        alt={product?.title}
         className="w-full h-32 object-cover rounded-md"
       />
       <div className="flex flex-col px-1 gap-2">

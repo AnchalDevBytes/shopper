@@ -20,7 +20,7 @@ const LeftMenu = () => {
   useEffect(() => {
     dispatch(getCategories(allProducts));
     dispatch(getBrands(allProducts));
-  }, [allProducts]);
+  }, [allProducts, dispatch]);
 
   const toggleFilters = () => {
     setShowFilters(!showFilters);

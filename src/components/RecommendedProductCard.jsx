@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 
@@ -6,8 +7,10 @@ const RecommendedProductCard = ({product}) => {
     return (
         <div onClick={() => router.push(`/product-detail/${product?.id}`)} className="flex p-2 md:p-4 bg-fuchsia-950 hover:bg-gradient-to-br justify-evenly gap-4 md:justify-normal md:gap-5 hover:from-fuchsia-950 hover:to-purple-950/70 mx-2  rounded-2xl max-w-2xl md:max-w-none md:min-w-[500px]">
         <div className="md:h-32 h-16 md:w-32 w-16 rounded-xl">
-          <img
-            className="w-full h-full rounded-xl"
+          <Image
+            height={720}
+            width={1280}
+            className="w-full h-full rounded-xl object-cover"
             src={product?.thumbnail}
             alt={product?.title}
           />

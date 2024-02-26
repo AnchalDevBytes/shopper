@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const DetailPage = () => {
   const dispatch = useDispatch();
@@ -47,23 +48,31 @@ const DetailPage = () => {
     <div className=" flex flex-col bg-purple-950/50 min-h-screen justify-center  py-20 md:py-28 gap-12 md:gap-20 lg:gap-32 ">
       <div className="flex flex-col lg:flex-row gap-10 md:gap-20 justify-center items-center">
         <div className="flex flex-col md:flex-row gap-4 md:gap-7">
-          <div className="h-[250px] w-[320px] md:h-[320px] lg:h-[320px] md:w-[500px] lg:w-[450px] rounded-xl">
-            <img
-              className="h-full w-full rounded-xl object-cover"
+          <div className="h-[250px] w-[320px] md:h-[320px] flex justify-center items-center lg:h-[320px] md:w-[500px] lg:w-[450px] rounded-xl">
+            <Image
+              className="rounded-xl object-cover h-full w-full"
               src={selectedImage}
               alt={product?.title}
+              height={1080}
+              width={1920}
             />
           </div>
           <div className="flex md:flex-col justify-evenly">
-            {product?.images?.map((image, index) => (
-              <img
-                key={index}
-                className="w-10 h-10 md:w-14 md:h-14 object-cover border-2 rounded-full mr-2"
-                src={image}
-                alt={`PI ${index + 1}`}
-                onClick={() => handleImageClick(image)}
-              />
-            ))}{" "}
+            {
+              product?.images?.map((image, index) => {
+                  return (
+                    <Image
+                      key={index}
+                      height={720}
+                      width={900}
+                      className="md:w-14 h-10 w-10 md:h-14 object-cover border-2 rounded-full mr-2"
+                      src={image}
+                      alt={`PI ${index + 1}`}
+                      onClick={() => handleImageClick(image)}
+                    />
+                  )
+                })
+              }
           </div>
         </div>
         <div className=" bg-fuchsia-950 bg-gradient-to-br from-fuchsia-950 to-purple-950/70 hover:bg-gradient-to-tr hover:from-fuchsia-950 hover:to-purple-950/70 lg:w-[40vw] w-[80vw] rounded-2xl py-7 px-10 flex flex-col gap-5">

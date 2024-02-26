@@ -3,14 +3,17 @@ import { useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { Button } from ".";
 import Link from "next/link";
+import Image from "next/image";
 
 const CartCard = ({ cartItem }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex p-2 md:p-5 bg-fuchsia-950 hover:bg-gradient-to-br justify-evenly gap-4 md:justify-normal md:gap-3 lg:gap-20 hover:from-fuchsia-950 hover:to-purple-950/70 mx-2 md:mx-5 lg:mx-32 rounded-2xl">
         <div className="md:h-32 h-16 md:w-32 w-16 rounded-xl">
-          <img
-            className="w-full h-full rounded-xl"
+          <Image
+            className="rounded-xl h-full w-full object-cover"
+            height={500}
+            width={500}
             src={cartItem?.thumbnail}
             alt={cartItem?.title}
           />

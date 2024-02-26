@@ -11,8 +11,8 @@ const ProductCategoriesShowcase = () => {
     const allCategories = useSelector(state => state.product.categories)
 
     useEffect(() => {
-        dispatch(getCategories(allProducts))
-    },[allProducts]);
+        dispatch(getCategories(allProducts));
+    },[allProducts, dispatch]);
 
   return (
     <section className="bg-purple-950/50 h-[70vh] w-full flex flex-col pt-16 items-center gap-10">

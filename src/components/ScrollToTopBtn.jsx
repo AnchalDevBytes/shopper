@@ -30,7 +30,7 @@ function ScrollToTopBtn({targetId}) {
         targetElement.removeEventListener("scroll", handleScroll);
     }
     };
-  }, [targetId]);
+  }, [targetId, handleScroll]);
 
   return (
     <div className="z-10">
