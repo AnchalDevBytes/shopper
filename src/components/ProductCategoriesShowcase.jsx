@@ -15,7 +15,7 @@ const ProductCategoriesShowcase = () => {
     },[allProducts]);
 
   return (
-    <section className="bg-purple-950/50 h-[70vh] w-screen flex flex-col pt-16 items-center gap-10">
+    <section className="bg-purple-950/50 h-[70vh] w-full flex flex-col pt-16 items-center gap-10">
       <div className="flex flex-col gap-1 md:gap-2 items-center">
         <h1 className="md:text-4xl text-2xl font-bold tracking-widest font-montserrat ">
           EXPLORE

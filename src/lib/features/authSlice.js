@@ -26,7 +26,7 @@ export const initializeStates = createAsyncThunk(
             const getCurrentUser = response.data;
             return {isAuthenticated : isAuthenticated, data : getCurrentUser};
         } catch (error) {
-            console.error("Error in getCurrentUser : ", error.message);   
+            console.error("Error in getCurrentUser : " +error.message);   
             throw error;
         }
     }
@@ -41,7 +41,7 @@ export const login = createAsyncThunk("login", async ({ username, password }) =>
       });
       return response.data;
     } catch (error) {
-      console.error("Login error:", error.message);
+      console.error("Login error:" +error.message);
       throw error; 
     }
   });

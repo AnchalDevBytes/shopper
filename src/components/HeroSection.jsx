@@ -53,7 +53,7 @@ const HeroSection = () => {
         backgroundRepeat : 'no-repeat',
         backgroundAttachment : 'fixed'
       }}
-      className={`w-screen h-screen`}
+      className={`h-screen`}
     >
       <div className="h-screen bg-gradient-to-br from-fuchsia-950/95 to-purple-800/20 flex flex-col items-center justify-center gap-20 lg:gap-5 backdrop-filter backdrop-blur-xl relative">
         <h1 className="lg:text-[50px] md:text-2xl text-sm md:mb-20 tracking-[10px] md:tracking-[35px] lg:tracking-[50px] font-montserrat border-b-8 leading-none text-center font-thin pb-4 md:pb-10 md:-mt-72 px-5 lg:mt-10 border-dotted border-fuchsia-700 rounded-b-[100px] z-0 welcome-animation">welcome</h1>

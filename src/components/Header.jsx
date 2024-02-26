@@ -79,7 +79,7 @@ const Header = () => {
           <Link
             href={"/wishlist"}
           >
-            <IoHeart className={`lg:text-2xl md:text-lg text-sm font-extralight cursor-pointer ${router.pathname === '/wishlist' ? "text-red-500" : ""}`}/>
+            <IoHeart className={`lg:text-2xl md:text-xl text-base font-extralight cursor-pointer ${router.pathname === '/wishlist' ? "text-red-500" : ""}`}/>
           </Link>
         </div>
       </ul>

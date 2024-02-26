@@ -24,9 +24,9 @@ const WishlistBtn = ({product}) => {
       onClick={handleWishlist}
     >
       {isInWishlist(product?.id) ? (
-        <IoHeart className="text-red-600 text-3xl" />
+        <IoHeart className="text-red-600 lg:text-3xl text-xl md:text-2xl" />
       ) : (
-        <IoHeartOutline className="text-3xl" />
+        <IoHeartOutline className="lg:text-3xl text-xl md:text-2xl" />
       )}
     </button>
   );

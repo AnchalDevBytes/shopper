@@ -13,7 +13,7 @@ const CartPage = () => {
   const totalProduct = cartProduct.reduce((total, cartItem) => total + cartItem.quantity, 0);
 
   return (
-    <div className="flex flex-col py-20 min-h-screen w-screen bg-purple-950/50 gap-10">
+    <div className="flex flex-col py-20 min-h-screen bg-purple-950/50 gap-10">
       <div className="w-[95vw] lg:w-[80vw] h-[85vh] mx-auto border border-neutral-300" >
         <h1 className="text-center text-2xl md:text-3xl tracking-wide font-semibold font-montserrat mt-5 text-pink-400/50">YOUR CART</h1>
         <div className="flex relative flex-col py-5 h-[68vh] ">

@@ -89,3 +89,11 @@ body {
   opacity: 0;
   animation: slide-up 0.8s ease-in-out 1s forwards;
 }
+
+.scroll-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+.scroll-hide::-webkit-scrollbar { 
+  display: none;
+}

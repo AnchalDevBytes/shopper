@@ -25,6 +25,7 @@ export const config = {
         '/cart',
         '/success',
         '/cancel',
-        '/about-us'
+        '/about-us',
+        '/wishlist'
     ]
 }
