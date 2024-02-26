@@ -14,10 +14,14 @@ const LoginPage = () => {
   const dispatch = useDispatch()
   const router = useRouter()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch(login({username:user.username, password:user.password}))
-    router.replace("/")
+    try {
+      await dispatch(login({username:user.username, password:user.password}))
+      router.replace("/");
+    } catch (error) {
+      console.error("Error in login page" +error.message);
+    }
   }
 
   return (
