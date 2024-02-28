@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const loadWishlistFromLocalStorage = () => {
     try {
-        const storedWishlist = localStorage.getItem("wishlist");
+        const storedWishlist = localStorage && localStorage.getItem("wishlist");
         return storedWishlist ? JSON.parse(storedWishlist) : []
     } catch (error) {
         console.error("Error while loading wishes from localStorage" +error);
@@ -12,7 +12,7 @@ export const loadWishlistFromLocalStorage = () => {
 
 export const saveWishlistToLocalStorage = (wishlist) => {
     try {
-        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+        localStorage && localStorage.setItem("wishlist", JSON.stringify(wishlist))
     } catch (error) {
         console.error("Error while saving wishes to localStorage" +error);
         throw error;

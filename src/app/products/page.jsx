@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ProductsPage = () => {
   const dispatch = useDispatch();
   const filterProducts = useSelector((state) => state.filter.filteredProducts);
+  console.log(filterProducts);
   const isLoading = useSelector((state) => state.filter.loading);
 
   useEffect(() => {

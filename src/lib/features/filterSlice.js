@@ -109,12 +109,13 @@ const filterSlice = createSlice({
               const passesBrandFilter = !brand || product.brand === brand;
               return passesPriceFilter && passesRatingFilter && passesBrandFilter;
             });
-            break;
+          } else {
+            state.filters = newFilter;
+            state.filteredProducts = state.products.filter(
+              (product) => product.category === filterValue
+            );
           }
           state.filters = newFilter;
-          state.filteredProducts = state.filteredProducts.filter(
-            (product) => product.category === filterValue
-          );
           break;
         };
 
