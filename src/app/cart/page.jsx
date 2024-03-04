@@ -17,7 +17,7 @@ const CartPage = () => {
       <div className="w-[95vw] lg:w-[80vw] h-[85vh] mx-auto border border-neutral-300" >
         <h1 className="text-center text-2xl md:text-3xl tracking-wide font-semibold font-montserrat mt-5 text-pink-400/50">YOUR CART</h1>
         <div className="flex relative flex-col py-5 h-[68vh] ">
-          <div id="cartScroll" className="min-h-full overflow-y-scroll mt-3">
+          <div id="cartScroll" className="min-h-full scroll-hide overflow-y-scroll mt-3">
             {cartProduct?.length > 0 ? (
               <>
               <div className="flex flex-col gap-10">

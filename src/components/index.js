@@ -13,5 +13,6 @@ import CartCard from "./CartCard";
 import ScrollToTopBtn from "./ScrollToTopBtn";
 import WishlistBtn from "./WishlistBtn";
 import RecommendedProductCard from "./RecommendedProductCard";
+import WishlistCard from './WishlistCard'
 
-export {Header, Footer, HeroSection, RecommendedProductCard, WishlistBtn, CartCard, ScrollToTopBtn, ScrollDownBtn, Highlight, Button, HighlightCard, FeaturedProducts, LeftMenu, RightMenu, ProductCategoriesShowcase}
+export {Header, Footer, WishlistCard, HeroSection, RecommendedProductCard, WishlistBtn, CartCard, ScrollToTopBtn, ScrollDownBtn, Highlight, Button, HighlightCard, FeaturedProducts, LeftMenu, RightMenu, ProductCategoriesShowcase}

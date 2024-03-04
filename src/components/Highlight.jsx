@@ -43,7 +43,7 @@ const Highlight = () => {
         loading ? (
           <div className="flex items-center justify-center text-3xl font-medium">...loading...</div>
         ) : (
-          <div className="flex  justify-center lg:gap-24 gap-10 lg:mx-80 flex-wrap">
+          <div className="flex  justify-center lg:gap-x-24 lg:gap-y-10 gap-10 lg:mx-80 flex-wrap">
         {topFiveProduct?.map((product) =>
           <HighlightCard key={product?.id} product={product}/>
         )}

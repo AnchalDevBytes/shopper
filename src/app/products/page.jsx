@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 const ProductsPage = () => {
   const dispatch = useDispatch();
   const filterProducts = useSelector((state) => state.filter.filteredProducts);
-  console.log(filterProducts);
   const isLoading = useSelector((state) => state.filter.loading);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const ProductsPage = () => {
         <>
         <div
           id="filterScroll"
-          className="flex flex-wrap items-center justify-center gap-10 lg:gap-16 px-10 py-5 overflow-y-scroll"
+          className="flex flex-wrap scroll-hide items-center justify-center gap-10 lg:gap-16 px-10 py-5 overflow-y-scroll"
         >
           {filterProducts?.length === 0 ? (
             <div>No products available</div>

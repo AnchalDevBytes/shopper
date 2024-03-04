@@ -4,9 +4,9 @@ import { addToCart } from "@/lib/features/cartSlice";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaStar, FaStarHalf } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { convertToStars } from "@/utils/starRating";
 
 const DetailPage = () => {
   const dispatch = useDispatch();
@@ -28,21 +28,6 @@ const DetailPage = () => {
     setSelectedImage(image);
   };
 
-  //star rating
-  const convertToStars = (rating) => {
-    const fullStars = Math.floor(rating);
-    const stars = [];
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<FaStar key={i} className="text-yellow-400" />);
-    }
-
-    if (rating > fullStars && rating <= fullStars + 0.5) {
-      stars.push(<FaStarHalf key="half" className="text-yellow-400" />);
-    } else if (rating > fullStars + 0.5) {
-      stars.push(<FaStar key={fullStars} className="text-yellow-400" />);
-    }
-    return stars;
-  };
 
   return (
     <div className=" flex flex-col bg-purple-950/50 min-h-screen justify-center  py-20 md:py-28 gap-12 md:gap-20 lg:gap-32 ">

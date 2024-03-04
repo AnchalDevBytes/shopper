@@ -8,12 +8,12 @@ import Image from "next/image";
 const CartCard = ({ cartItem }) => {
   const dispatch = useDispatch();
   return (
-    <div className="flex p-2 md:p-5 bg-fuchsia-950 hover:bg-gradient-to-br justify-evenly gap-4 md:justify-normal md:gap-3 lg:gap-20 hover:from-fuchsia-950 hover:to-purple-950/70 mx-2 md:mx-5 lg:mx-32 rounded-2xl">
+    <div className="flex p-2 md:p-5 bg-fuchsia-950 hover:bg-gradient-to-br gap-5 md:justify-normal md:gap-7 lg:gap-20 hover:from-fuchsia-950 hover:to-purple-950/70 mx-2 md:mx-5 lg:mx-32 rounded-2xl">
         <div className="md:h-32 h-16 md:w-32 w-16 rounded-xl">
           <Image
             className="rounded-xl h-full w-full object-cover"
-            height={500}
-            width={500}
+            height={720}
+            width={1280}
             src={cartItem?.thumbnail}
             alt={cartItem?.title}
           />
@@ -39,13 +39,13 @@ const CartCard = ({ cartItem }) => {
             </p>
           </div>
           <div className="flex gap-2 items-center">
-            <Button className={"px-[6px] text-center py-[2px] md:px-5 md:py-3"} text="-" clicFun={() => dispatch(decrement(cartItem.id))} />
+            <Button className={"px-[9px] text-center py-[2px] md:px-5 md:py-3"} text="-" clicFun={() => dispatch(decrement(cartItem.id))} />
             <span className="lg:text-lg text-xs text-white">{cartItem?.quantity}</span>
-            <Button className={"px-[6px] text-center py-[2px] md:px-5 md:py-3"} text="+" clicFun={() => dispatch(increment(cartItem.id))} />
+            <Button className={"px-[7px] text-center py-[2px] md:px-5 md:py-3"} text="+" clicFun={() => dispatch(increment(cartItem.id))} />
           </div>
         </div>
         <div className="flex items-center pl-2">
-          <Button className={"px-[6px] py-[4px] md:px-5 md:py-3"}
+          <Button className={"px-[8px] py-[7px] md:px-5 md:py-3"}
             text={
               <MdDelete className="active:bg-red-300 text-xs md:text-sm lg:text-lg hover:text-red-500" />
             }
