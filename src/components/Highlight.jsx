@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HighlightCard, ScrollDownBtn } from ".";
 import { fetchAllProducts } from "@/lib/features/filterSlice";
+import HighlightSkeletonCard from "./HighlightSkeletonCard";
 
 const Highlight = () => {
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,10 @@ const Highlight = () => {
       <div className="pb-20">
       {
         loading ? (
-          <div className="flex items-center justify-center text-3xl font-medium">...loading...</div>
+          <div className="flex  justify-center lg:gap-x-24 lg:gap-y-10 gap-10 lg:mx-80 flex-wrap">
+            {[...Array(5)]?.map((_,index) => (
+              <HighlightSkeletonCard key={`Skeleton-${index}`}/>))}
+          </div>
         ) : (
           <div className="flex  justify-center lg:gap-x-24 lg:gap-y-10 gap-10 lg:mx-80 flex-wrap">
         {topFiveProduct?.map((product) =>

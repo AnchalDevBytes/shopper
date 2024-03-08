@@ -1,13 +1,11 @@
 "use client"
 import { getCategories } from "@/lib/features/ProductSlice";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductCategoriesShowcase = () => {
 
-    const router = useRouter()
     const dispatch = useDispatch();
     const allProducts = useSelector(state => state.filter.products);
     const allCategories = useSelector(state => state.product.categories)
@@ -15,12 +13,6 @@ const ProductCategoriesShowcase = () => {
     useEffect(() => {
         dispatch(getCategories(allProducts));
     },[allProducts, dispatch]);
-
-    const handleCategoryClick = (category) => {
-      const encodedCategory = encodeURIComponent(category)
-      const newUrl = `/products?category=${encodedCategory}`
-      router.push(newUrl);
-    } 
 
   return (
     <section className="bg-purple-950/50 h-[70vh] w-full flex flex-col pt-16 items-center gap-10">
@@ -39,14 +31,13 @@ const ProductCategoriesShowcase = () => {
         {allCategories?.slice(12,18)?.map((category) => (
             <div key={category} className="flex flex-row">
                <button
-               onClick={() => handleCategoryClick(category)}
-                className="text-xl font-bold font-montserrat text-pink-600/80 border-r-2 border-l-2 rounded-lg px-4 hover:scale-75 transition-all cursor-pointer">
+                className="text-xl font-bold font-montserrat text-pink-600/80 border-r-2 border-l-2 rounded-lg px-4 ">
                 {category.toUpperCase()}
               </button>
             </div>
         ))}
       </div>
-        <Link href={`/products`} className="text-sm font-light bg-purple-600 p-2 w-fit rounded-md">Show all</Link>
+        <Link href={`/products`} className="text-sm font-light bg-purple-600 p-2 md:px-5 md:py-3 w-fit rounded-md transition-all hover:bg-purple-700 active:bg-purple-300">Show all</Link>
     </section>
   );
 };

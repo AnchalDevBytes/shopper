@@ -33,7 +33,7 @@ const DetailPage = () => {
     <div className=" flex flex-col bg-purple-950/50 min-h-screen justify-center  py-20 md:py-28 gap-12 md:gap-20 lg:gap-32 ">
       <div className="flex flex-col lg:flex-row gap-10 md:gap-20 justify-center items-center">
         <div className="flex flex-col md:flex-row gap-4 md:gap-7">
-          <div className="h-[250px] w-[320px] md:h-[320px] flex justify-center items-center lg:h-[320px] md:w-[500px] lg:w-[450px] rounded-xl">
+          <div className="h-[200px] w-[320px] md:h-[320px] flex justify-center items-center lg:h-[320px] md:w-[500px] lg:w-[450px] rounded-xl">
             <Image
               className="rounded-xl object-cover h-full w-full"
               src={selectedImage}
@@ -69,38 +69,38 @@ const DetailPage = () => {
               >
                 {product?.title}
               </Link>
-              <p className="text-gray-300 text-sm md:text-base font-extralight tracking-wider">
+              <p className="text-gray-300 text-xs md:text-base font-extralight tracking-wider">
                 {product?.description}
               </p>
-              <p className="text-green-700 font-bold text-lg md:text-xl">
+              <p className="text-green-700 font-bold text-sm md:text-xl">
                 ${product?.price?.toFixed(2)}
               </p>
             </div>
             <div className="flex gap-2">
-              <span className=" bg-gray-200 rounded-full px-3 py-1 md:px-6 md:py-3 text-sm font-semibold text-gray-700">
+              <span className=" bg-gray-200 rounded-full px-3 py-[5px] md:px-6 md:py-3 md:text-sm text-xs font-semibold text-gray-700">
                 {product?.category}
               </span>
-              <span className=" bg-gray-200 rounded-full px-3 py-1 md:px-6 md:py-3 text-sm font-semibold text-gray-700">
+              <span className=" bg-gray-200 rounded-full px-3 py-[5px] md:px-6 md:py-3 md:text-sm text-xs font-semibold text-gray-700">
                 {product?.brand}
               </span>
             </div>
             <div className=" flex flex-col gap-1">
-              <p className="text-base text-gray-300 font-bold flex items-center gap-2">
+              <p className="md:text-base text-sm text-gray-300 font-bold flex items-center gap-2">
                 {" "}
                 Rating:{" "}
-                <span className=" text-sm text-gray-300 flex gap-1 ">
+                <span className=" md:text-sm text-xs text-gray-300 flex gap-1 ">
                   {convertToStars(product?.rating)}
                 </span>
               </p>
-              <p className="text-sm text-gray-300 font-bold flex gap-2 items-center">
+              <p className="md:text-sm text-xs text-gray-300 font-bold flex gap-2 items-center">
                 Stock:{" "}
-                <span className="text-base text-pink-400 ">
+                <span className="md:text-base text-sm text-pink-400 ">
                   ({product?.stock} in stock)
                 </span>
               </p>
-              <p className="text-sm font-bold text-gray-300 flex gap-2 items-center">
+              <p className="md:text-sm text-xs font-bold text-gray-300 flex gap-2 items-center">
                 Discount:{" "}
-                <span className="text-base  text-red-400 animate-pulse">
+                <span className="md:text-base text-sm  text-red-400 animate-pulse">
                   {product?.discountPercentage} %
                 </span>
               </p>
@@ -120,7 +120,7 @@ const DetailPage = () => {
         <h2 className="text-xl font-semibold md:text-2xl lg:text-3xl tracking-widest">
           Recommended Product with the same category
         </h2>
-        <div className="flex flex-col md:w-[80vw] md:mx-auto py-2 md:flex-row gap-5 scroll-hide md:overflow-x-auto">
+        <div className="flex flex-col md:w-[80vw] md:mx-auto pb-4 md:flex-row gap-5 scroll-hide md:overflow-x-auto">
           {categoryProduct?.map((recommendedProduct) => (
             <RecommendedProductCard
               key={recommendedProduct?.id}

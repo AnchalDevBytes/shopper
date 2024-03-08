@@ -67,8 +67,7 @@ const Header = () => {
         >
           Products
         </Link>
-        <div className="flex gap-7 md:gap-10 lg:gap-20 items-center">
-          {authStatus && <button className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider" onClick={handleLogout}>Logout</button>}
+        <div className="flex gap-6 md:gap-10 lg:gap-20 items-center">
           <Link
             href={"/cart"}
             className="relative"
@@ -81,6 +80,17 @@ const Header = () => {
           >
             <IoHeart className={`lg:text-2xl md:text-xl text-base font-extralight cursor-pointer ${router.pathname === '/wishlist' ? "text-red-500" : ""}`}/>
           </Link>
+          {
+            authStatus ? (
+              <button className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider" onClick={handleLogout}>
+                Logout
+              </button>
+            ) : (
+              <Link className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider" href="/login">
+                Login
+              </Link>
+            )
+          }
         </div>
       </ul>
     </header>

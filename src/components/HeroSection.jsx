@@ -67,7 +67,7 @@ const HeroSection = () => {
           to
         </p>
         <h2
-           className="lg:text-[300px] md:text-[160px] text-[80px] px-10 w-[98%]  lg:w-[80%] flex items-center justify-center tracking-tighter md:mt-20 lg:tracking-normal md:font-bold font-poorstory leading-none pt-5 border-t-4 border-fuchsia-700 bg-gradient-to-b from-fuchsia-700/80 text-pink-600 to-transparent rounded-t-[50px] md:rounded-t-[100px] backdrop-filter backdrop-blur-md z-20 shopper-animation font-montserrat transition-all"
+           className="lg:text-[300px] md:text-[160px] text-[80px] px-10 w-[98%]  lg:w-[80%] flex items-center justify-center tracking-tighter md:mt-20 lg:tracking-normal md:font-bold font-poorstory leading-none pt-5 border-t-4 border-fuchsia-700 bg-gradient-to-b from-fuchsia-700/80 to-transparent text-pink-600 rounded-t-[50px] md:rounded-t-[100px] z-20 shopper-animation font-montserrat transition-all"
            >
               {displayText}
               <span

@@ -10,10 +10,10 @@ const WishlistPage = () => {
       <h1 className="text-4xl tracking-widest font-montserrat font-semibold">
         Wishlist
       </h1>
-      <div id="wishlistScroll" className="flex overflow-y-scroll scroll-hide h-[70vh]">
+      <div className="flex items-center">
         {wishlist?.length > 0 ? (
         <>
-          <div className="flex flex-col gap-10 ">
+          <div id="wishlistScroll" className="flex overflow-y-scroll scroll-hide h-[70vh] flex-col gap-10 ">
           {  wishlist?.map((product) => (
             <WishlistCard key={product?.id} product={product} />
           ))}
@@ -24,7 +24,7 @@ const WishlistPage = () => {
         </>
         ) : (
           <div className="flex items-center justify-center">
-            Your wishlist is empty
+            <p className=" text-sm md:text-xl tracking-[6px] font-light text-pink-600  animate-pulse">Your wishlist is empty</p>
           </div>
         )}
       </div>

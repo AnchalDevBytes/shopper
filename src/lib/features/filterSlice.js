@@ -100,7 +100,7 @@ const filterSlice = createSlice({
           const newFilter = { ...state.filters, category : filterValue};
           const {price, brand, rating} = newFilter;
           if (filterValue === "all categories") {
-            // Preserve other filters and reset only the brand filter
+            // Preserve other filters and reset only the category filter
             state.filteredProducts = state.products.filter((product) => {
               const passesPriceFilter =
                 (!price.min || product.price >= price.min) &&
@@ -126,6 +126,12 @@ const filterSlice = createSlice({
 
     clearFilters: (state) => {
       state.filteredProducts = state.products;
+      state.filters = {
+        brand:null,
+        price:{min:null, max:null},
+        rating:null,
+        category:null
+      }
     },
     
   },

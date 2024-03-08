@@ -12,7 +12,7 @@ const HomePage = () => {
     smartphones : [],
     groceries : [],
     jwelleries : [],
-    loading : false
+    loading : true
   })
   
   useEffect(()=>{

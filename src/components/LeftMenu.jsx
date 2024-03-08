@@ -36,33 +36,34 @@ const LeftMenu = () => {
   };
 
   return (
-    <div className="md:h-[80vh] md:w-[30vw] lg:w-[15vw] w-screen mt-10 md:mt-0 rounded-lg p-10 flex flex-col">
+    <div className="md:h-[80vh] md:w-[30vw] lg:w-[15vw] mt-20 md:mt-0 rounded-lg md:p-4 lg:p-10 flex flex-col bg-fuchsia-950 shadow-black shadow">
       {/*for small screens */}
       <div className="block md:hidden mb-4">
         <button
           onClick={toggleFilters}
-          className="text-lg tracking-widest font-montserrat text-pink-300 "
+          className="text-base text-center tracking-widest px-2 py-1 font-montserrat text-pink-300 "
         >
           Apply Filters
         </button>
       </div>
+
       {/* Filters for medium and large screens */}
       <div className={showFilters ? "block" : "hidden md:flex"}>
-        <div className="md:h-[80vh] md:w-[30vw] lg:w-[15vw] w-[80vw] p-5 md:mt-0 rounded-lg md:p-10 flex flex-col">
+        <div className="md:h-[80vh] md:w-[30vw] lg:w-[15vw] w-[80vw] p-5 md:mt-0 rounded-lg md:p-10 flex flex-col gap-3">
           {/* cateories */}
           <div className="flex md:flex-col items-center md:items-start justify-between md:justify-normal md:gap-2">
-            <h3 className="md:text-2xl text-sm font-normal tracking-wider md:font-semibold mb-2">
+            <h3 className="md:text-base text-sm tracking-[5px] font-normal md:font-semibold mb-2">
               Category
             </h3>
             <select
               name="category"
-              className="flex flex-col gap-1 w-36 bg-fuchsia-950 rounded-md py-3 px-5 text-white text-sm"
+              className="w-36 border-fuchsia-950 bg-fuchsia-800 text-white shadow shadow-fuchsia-900 rounded-md py-2 px-5 outline-none text-sm scroll-hide"
               onChange={(e) => handleFilter("category", e.target.value)}
             >
               {allCategories.map((category) => (
                 <option
                   key={category}
-                  className="py-2 px-5 rounded-md bg-purple-950"
+                  className="py-2 px-5 rounded-md bg-purple-950 text-fuchsia-300"
                   value={category}
                 >
                   {category}
@@ -73,12 +74,12 @@ const LeftMenu = () => {
 
           {/* price filter */}
           <div className="flex md:flex-col items-center md:items-start justify-between md:justify-normal md:gap-2 mt-4">
-            <h3 className="md:text-2xl text-sm font-normal tracking-wider md:font-semibold mb-2">
+            <h3 className="md:text-base text-sm tracking-[5px] font-normal md:font-semibold mb-2">
               Price Filter
             </h3>
             <select
               name="price"
-              className="flex flex-col gap-1 w-36 bg-fuchsia-950 rounded-md py-3 px-5 text-white text-sm"
+              className="w-36 border-fuchsia-950 bg-fuchsia-800 text-white shadow shadow-fuchsia-900 rounded-md py-2 px-5 outline-none text-sm scroll-hide"
               onChange={(e) => handleFilter("price", e.target.value)}
             >
               <option value={"0-2000"}>All Prices</option>
@@ -91,12 +92,12 @@ const LeftMenu = () => {
           </div>
           {/* rating filter */}
           <div className="flex md:flex-col items-center md:items-start justify-between md:justify-normal md:gap-2 mt-4">
-            <h3 className="md:text-2xl text-sm font-normal tracking-wider md:font-semibold mb-2">
+            <h3 className="md:text-base text-sm tracking-[5px] font-normal md:font-semibold mb-2">
               Rating Filter
             </h3>
             <select
               name="rating"
-              className="flex flex-col gap-1 w-36 bg-fuchsia-950 rounded-md py-3 px-5 text-white text-sm"
+              className="w-36 border-fuchsia-950 bg-fuchsia-800 text-white shadow shadow-fuchsia-900 rounded-md py-2 px-5 outline-none text-sm scroll-hide"
               onChange={(e) => handleFilter("rating", e.target.value)}
             >
               <option value="0">All Ratings</option>
@@ -109,12 +110,12 @@ const LeftMenu = () => {
 
           {/* brand filter */}
           <div className="flex md:flex-col items-center md:items-start justify-between md:justify-normal md:gap-2 mt-4">
-            <h3 className="md:text-2xl text-sm font-normal tracking-wider md:font-semibold mb-2">
+            <h3 className="md:text-base text-sm tracking-[5px] font-normal md:font-semibold mb-2">
               Brand Filter
             </h3>
             <select
               name="brand"
-              className="flex flex-col gap-1 bg-fuchsia-950 rounded-md py-3 px-5 text-white text-sm w-36"
+              className="w-36 border-fuchsia-950 bg-fuchsia-800 text-white shadow shadow-fuchsia-900 rounded-md py-2 px-5 outline-none text-sm scroll-hide"
               onChange={(e) => handleFilter("brand", e.target.value)}
             >
               {allBrands.map((brand) => (
@@ -127,7 +128,7 @@ const LeftMenu = () => {
           </div>
           <button
             onClick={() => dispatch(clearFilters())}
-            className="px-4 mt-5 active:bg-red-500 py-2 w-fit md:w-full rounded-md bg-red-400 text-white font-bold text-lg flex gap-2 items-center"
+            className="px-4 mt-5 active:bg-red-500 py-2 w-fit md:w-full rounded-md border-red-600 border-2 bg-red-800/50 text-white font-bold text-lg flex gap-2 items-center"
           >
             Clear <MdCleaningServices />
           </button>

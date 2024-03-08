@@ -3,7 +3,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const initialState = {
-    loader:true,
+    loader:false,
     userData: null,
     authStatus : false,
 }
