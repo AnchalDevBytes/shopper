@@ -31,7 +31,7 @@ function ScrollToTopBtn({targetId}) {
     }
     };
     console.log("target escrool");
-  }, [targetId, handleScroll]);
+  }, [targetId]);
 
   return (
     <div className="z-10">
