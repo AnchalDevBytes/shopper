@@ -30,6 +30,20 @@ Welcome to the shopper Project! This project is a full-fledged e-commerce web ap
     password : OWsTbMUgFc
 ```
 
+## Dummy Stripe User Credentials
+```
+    Email : anything@random.com
+    Card no : 4242 4242 4242 4242
+    CVV : 155
+    Expires on: 12/24
+    Cardholder name: test user
+
+    Country : United State
+    Address1 : test adres for USA
+    City : alaska
+    Zip code : 99501
+```
+
 ## Other Screenshots
 
 ### More Categories

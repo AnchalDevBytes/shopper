@@ -25,7 +25,7 @@ function ScrollToTopBtn({targetId}) {
   useEffect(() => {
     const targetElement = document.getElementById(targetId);
     if(targetElement) {
-      targetElement.addEventListener('scroll', handleScroll)
+      targetElement.addEventListener('scroll', handleScroll);
       return () => {
         targetElement.removeEventListener("scroll", handleScroll);
     }

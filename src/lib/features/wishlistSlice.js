@@ -25,12 +25,12 @@ export const wishlistSlice = createSlice({
     reducers:{
         addWishes: (state, action) => {
             const newState = [...state, action.payload];
-            saveWishlistToLocalStorage(newState)
+            saveWishlistToLocalStorage(newState);
             return newState;
         },
         removeWishes: (state, action) => {
             const newState = state.filter((product) => product.id !== action.payload);
-            saveWishlistToLocalStorage(newState)
+            saveWishlistToLocalStorage(newState);
             return newState;
         }
     }
