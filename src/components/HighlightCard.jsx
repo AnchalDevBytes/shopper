@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const HighlightCard = ({ product }) => {
   const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/product-detail/${product?.id}`);
+  };
+
   return (
-    <div onClick={()=>router.push(`/product-detail/${product?.id}`)} className="md:w-72 w-64 rounded-md shadow shadow-black cursor-pointer hover:scale-105 transition-all flex flex-col gap-2 bg-fuchsia-950 hover:bg-gradient-to-br hover:from-fuchsia-950 hover:to-purple-950/70 hover:backdrop-filter hover:backdrop-blur-lg p-2">
+    <div onClick={handleClick} className="md:w-72 w-64 rounded-md shadow shadow-black cursor-pointer hover:scale-105 transition-all flex flex-col gap-2 bg-fuchsia-950 hover:bg-gradient-to-br hover:from-fuchsia-950 hover:to-purple-950/70 hover:backdrop-filter hover:backdrop-blur-lg p-2">
       <div className="w-full h-24 md:h-32">
         <Image
           height={720}
@@ -16,7 +23,7 @@ const HighlightCard = ({ product }) => {
       </div>
       <div className="flex flex-col px-1 gap-2 py-2">
         <h2 className="text-base font-semibold text-gray-200">
-          {product?.title.slice(0,30)}
+          {product?.title.slice(0, 30)}
         </h2>
         <p className="text-xs text-gray-400">
           {product?.description?.slice(0, 60)}...

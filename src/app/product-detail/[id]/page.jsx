@@ -20,7 +20,7 @@ const DetailPage = () => {
 
   //filter product based on category of product
   const categoryProduct = filteredProducts.filter(
-    (item) => item.category === product.category && item.id !== product.id
+    (item) => item.category === product?.category && item.id !== product.id
   );
 
   // for dynamic images

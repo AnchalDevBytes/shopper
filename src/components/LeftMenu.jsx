@@ -118,8 +118,8 @@ const LeftMenu = () => {
               className="w-36 border-fuchsia-950 bg-fuchsia-800 text-white shadow shadow-fuchsia-900 rounded-md py-2 px-5 outline-none text-sm scroll-hide"
               onChange={(e) => handleFilter("brand", e.target.value)}
             >
-              {allBrands.map((brand) => (
-                <option value={brand} key={brand}>
+              {allBrands.map((brand, index) => (
+                <option value={brand} key={index}>
                   {brand}
                 </option>
               ))}

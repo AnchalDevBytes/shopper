@@ -58,8 +58,8 @@ const Header = () => {
         <Link
           href={"/"}
           className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider"
-        >
-          Shoppy
+        >  
+          Shopper
         </Link>
         <Link
           href={"/products"}

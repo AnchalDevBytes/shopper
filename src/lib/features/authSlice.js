@@ -34,6 +34,8 @@ export const initializeStates = createAsyncThunk(
 
 
 export const login = createAsyncThunk("login", async ({ username, password }) => {
+    console.log(username,   password);
+    
     try {
       const response = await axios.post("https://dummyjson.com/auth/login", {
         username: username,

@@ -3,7 +3,16 @@ import { NextResponse } from "next/server";
 export default function middleware(request) {
     const path = request.nextUrl.pathname;
 
-    const isPublicPath = path === '/login' || path === '/' || path === '/about-us' || path === '/contact-us';
+    const isPublicPath = 
+        path === '/login' || 
+        path === '/' || 
+        path === '/about-us' || 
+        path === '/contact-us' || 
+        path === '/products' || 
+        path === '/product-detail/:id*' || 
+        path === '/success' || 
+        path === '/cancel' || 
+        path === '/cart';
 
     const token = request.cookies.get('login-token')?.value || '';
 
@@ -21,7 +30,7 @@ export const config = {
         '/',
         '/login',
         '/products',
-        '/product-detail/:id*',
+        '/products/:id*',
         '/cart',
         '/success',
         '/cancel',
