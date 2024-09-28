@@ -2,8 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { initializeStates, logout } from "@/lib/features/authSlice";
+import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { IoHeart } from "react-icons/io5";
 
@@ -11,7 +10,6 @@ const Header = () => {
   const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const dispatch = useDispatch()
   const router = useRouter()
 
   useEffect(() => {
@@ -35,18 +33,6 @@ const Header = () => {
   //total product in cart
   const cartProduct = useSelector((state) => state.cart.productCart);
   const totalQuantity = cartProduct.reduce((total, product) => total + product.quantity, 0)
-  
-  const handleLogout = () => {
-    dispatch(logout())
-    router.replace("/login")
-  }
-
-  useEffect(()=>{
-    dispatch(initializeStates());
-  },[dispatch])
-
-  const authStatus = useSelector(state => state.auth.authStatus)
-
 
   return (
     <header
@@ -80,17 +66,6 @@ const Header = () => {
           >
             <IoHeart className={`lg:text-2xl md:text-xl text-base font-extralight cursor-pointer ${router.pathname === '/wishlist' ? "text-red-500" : ""}`}/>
           </Link>
-          {
-            authStatus ? (
-              <button className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider" onClick={handleLogout}>
-                Logout
-              </button>
-            ) : (
-              <Link className="lg:text-xl md:text-base text-sm font-extralight cursor-pointer hover:font-normal transition-all ease-in-out duration-100 text-slate-100 tracking-wider" href="/login">
-                Login
-              </Link>
-            )
-          }
         </div>
       </ul>
     </header>
