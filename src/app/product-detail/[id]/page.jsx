@@ -50,7 +50,7 @@ const DetailPage = () => {
                       key={index}
                       height={720}
                       width={900}
-                      className="md:w-14 h-10 w-10 md:h-14 object-cover border-2 rounded-full mr-2"
+                      className="md:w-14 h-10 w-10 md:h-14 object-cover border-2 rounded-full mr-2 cursor-pointer"
                       src={image}
                       alt={`PI ${index + 1}`}
                       onClick={() => handleImageClick(image)}
